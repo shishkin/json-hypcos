@@ -43,7 +43,6 @@ Hypermedia controls defined in this document are standard building blocks which 
 1. [Hypertext Application Language][hal]
 2. [H Factor][hfactor]
 3. [JSON Schema][schema]
-4. [URI Template][uritemplate]
 
 [hfactor]: http://amundsen.com/hypermedia/hfactor
 [LE]: http://amundsen.com/hypermedia/hfactor/#le
@@ -57,4 +56,3 @@ Hypermedia controls defined in this document are standard building blocks which 
 [CL]: http://amundsen.com/hypermedia/hfactor/#cl
 [hal]: http://stateless.co/hal_specification.html
 [schema]: http://json-schema.org/
-[uritemplate]: http://tools.ietf.org/html/rfc6570
