@@ -44,7 +44,7 @@ Hypermedia controls defined in this document are standard building blocks which 
 2. [H Factor][hfactor]
 3. [JSON Schema][schema]
 
-[hfactor]: http://amundsen.com/hypermedia/hfactor
+[hfactor]: http://amundsen.com/hypermedia/hfactor/
 [LE]: http://amundsen.com/hypermedia/hfactor/#le
 [LO]: http://amundsen.com/hypermedia/hfactor/#lo
 [LT]: http://amundsen.com/hypermedia/hfactor/#lt
