@@ -46,6 +46,23 @@ A link object is a more sophisticated representation of a link concept in JSON. 
 
 In its simplest form the link object only represents the [LO] factor, but its power is in combination with other hypcos.
 
+### Link Relation
+This is a [HAL] flavor to represent a relation type ([CL]) of a link object:
+
+```javascript
+"venue": { "href": "http://api.example.com/venues/123" }
+```
+
+### Link Relation Attribute
+Another flavor is to represent the relation type ([CL]) as an attribute of a link object:
+
+```javascript
+{
+  "rel": "venue",
+  "href": "http://api.example.com/venues/123"
+}
+```
+
 ### Template
 Pre-constructed and pre-filled JSON object that the client can alter before sending back to the server. The client alters only the parts it understands, thus template is a way to get hidden fields of HTML forms in JSON. When used in a Link Hypco can provide [LN] H-Factor.
 
