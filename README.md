@@ -99,6 +99,20 @@ Another option to group multiple links together is to put them in an array. `Lin
 ]
 ```
 
+### Templated URI
+The server can instruct clients to construct resource URIs by expansion of [URI Templates] with parameters:
+
+```
+"http://api.example.com/search{?input,offset,count}"
+```
+
+### Templated URI Attribute
+To distinct templated URIs, they can be put in a special `href-template` attribute:
+
+```javascript
+"href-template": "http://api.example.com/search{?input,offset,count}"
+```
+
 ### Template
 Pre-constructed and pre-filled JSON object that the client can alter before sending back to the server. The client alters only the parts it understands, thus template is a way to get hidden fields of HTML forms in JSON. When used in a Link Hypco can provide [LN] H-Factor.
 
@@ -112,7 +126,7 @@ Hypermedia controls defined in this document are standard building blocks which 
 ### Example
 As an example of building a media type out of JSON hypcos let's consider [HAL], which can be described as:
 
-> [HAL] is superset of `Link Object` + `Link Relation` + `Self Link` + `Links Hash` + `Links Array` (though it uses "_links" attribute name)
+> [HAL] is superset of `Link Object` + `Link Relation` + `Self Link` + `Links Hash` + `Links Array` + `Templated URI` (though it uses "_links" attribute name)
 
 ## References
 1. [Hypertext Application Language][hal]
@@ -130,4 +144,5 @@ As an example of building a media type out of JSON hypcos let's consider [HAL], 
 [CM]: http://amundsen.com/hypermedia/hfactor/#cm
 [CL]: http://amundsen.com/hypermedia/hfactor/#cl
 [hal]: http://stateless.co/hal_specification.html
+[URI Templates]: http://tools.ietf.org/html/rfc6570
 [schema]: http://json-schema.org/
