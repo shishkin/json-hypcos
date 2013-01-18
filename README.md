@@ -109,6 +109,11 @@ Embed [JSON Schema][schema] snippets to describe semantics of data.
 ## Integration
 Hypermedia controls defined in this document are standard building blocks which can be reused individually or all at once. Since Hypcos are defined as JSON objects with only optional attributes every JSON media type can be gradually enriched by JSON hypcos to provide required level of application flow control.
 
+### Example
+As an example of building a media type out of JSON hypcos let's consider [HAL], which can be described as:
+
+> [HAL] is superset of `Link Object` + `Link Relation` + `Self Link` + `Links Hash` + `Links Array` (though it uses "_links" attribute name)
+
 ## References
 1. [Hypertext Application Language][hal]
 2. [H Factor][hfactor]
