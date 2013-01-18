@@ -6,7 +6,7 @@
 
 JSON is a popular media type used for building web APIs. While good as a data format, JSON is not a hypermedia type as it lacks means of application flow control (hypermedia controls). Although attempts were made to build a JSON-based hypermedia type (most notably [Hypertext Applicataion Language – HAL][hal]), still JSON implementations aren't on par with more mature XML-based hypermedia types.
 
-JSON hypermedia controls (Hypcos) are not intended to become the missing all-in-one JSON hypermedia type but rather to provide standard building blocks for constructing new and extending existing hypermedia types.
+JSON hypermedia controls (Hypcos) are not intended to become the missing all-in-one JSON hypermedia type but rather to provide standard building blocks for constructing new and extending existing hypermedia types. JSON hypcos intentionally duplicate (actually combine) some of the existing efforts, overlap or even conflict with each other. API designers are encouraged to cherry-pick and mix JSON hypcos together to define a media type.
 
 ### Hypermedia Factor
 
@@ -35,10 +35,18 @@ The simplest possible way to describe a linked resource is to represent its URI 
 }
 ```
 
-The name of the attribute conveys the relation type ([CL] factor) while the URL value represents both [LE] and [LO].
+The name of the attribute conveys the relation type ([CL] factor) while the URL value represents [LO].
 
 ### Link Object
-Target another resource and provide control data. Based on [HAL] links.
+A link object is a more sophisticated representation of a link concept in JSON. Derived from [HAL] links, link objects provide extensibility to links:
+
+```javascript
+{
+  "href": "http://api.example.com/venues/123"
+}
+```
+
+In its simplest form the link object only represents the [LO] factor, but its power is in combination with other hypcos.
 
 ### Template
 Pre-constructed and pre-filled JSON object that the client can alter before sending back to the server. The client alters only the parts it understands, thus template is a way to get hidden fields of HTML forms in JSON. When used in a Link Hypco can provide [LN] H-Factor.
@@ -48,7 +56,7 @@ Embed [JSON Schema][schema] snippets to describe semantics of data.
 
 
 ## Integration
-Hypermedia controls defined in this document are standard building blocks which can be reused individually or all at once. Since Hypcos are defined as JSON objects with only optional attributes every JSON media type can be gradually enriched by a Hypco to provide required level of application flow control.
+Hypermedia controls defined in this document are standard building blocks which can be reused individually or all at once. Since Hypcos are defined as JSON objects with only optional attributes every JSON media type can be gradually enriched by JSON hypcos to provide required level of application flow control.
 
 ## References
 1. [Hypertext Application Language][hal]
