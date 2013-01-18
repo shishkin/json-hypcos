@@ -63,6 +63,42 @@ Another flavor is to represent the relation type ([CL]) as an attribute of a lin
 }
 ```
 
+### Self Link
+A link with the `self` relation type contain the canonical resource URI and identifies a resource in a JSON soup. Self link relation type can be represented with both `Link Relation` and `Link Relation Attribute` hypcos.
+
+### Links Hash
+A hash (or map) of links can be used to group outbound links of a resource together and thus improve discoverability of links for clients. Links can be represented by either `Link Value` or `Link Object` and are stored in a hash by their relation types:
+
+```javascript
+"links": {
+  "venue": <link>,
+  "organizer": <link>
+}
+```
+
+[HAL] always imply `Link Object` representations and use `"_links"` attribute instead of `"links"`. Underscore is a taste preference. [HAL] uses underscores to avoid name clashes, but what other semantic can the word 'links' have in the context of a hypermedia resource?
+
+### Links Array
+Another option to group multiple links together is to put them in an array. `Links Array` can be used in conjunction with `Link Relation`:
+
+```javascript
+"venues": [<link1>, <link2>, ...]
+```
+
+`Links Array` can also be used with `Link Relation Attribute`:
+
+```javascript
+"links": [
+  {
+    "rel": "venue",
+    "href": "http://api.example.com/venues/123"
+  }, {
+    "rel": "organizer",
+    "href": "http://api.example.com/users/4321"
+  }
+]
+```
+
 ### Template
 Pre-constructed and pre-filled JSON object that the client can alter before sending back to the server. The client alters only the parts it understands, thus template is a way to get hidden fields of HTML forms in JSON. When used in a Link Hypco can provide [LN] H-Factor.
 
