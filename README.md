@@ -26,7 +26,18 @@ Hypcos cover all the listed H-Factor values being a valuable foundation for a fu
 
 ## Hypermedia Controls
 
-### Link
+### Link Value
+The simplest possible way to describe a linked resource is to represent its URI as a value of a JSON attribute:
+
+```javascript
+{
+  "venue": "http://api.example.com/venues/123"
+}
+```
+
+The name of the attribute conveys the relation type ([CL] factor) while the URL value represents both [LE] and [LO].
+
+### Link Object
 Target another resource and provide control data. Based on [HAL] links.
 
 ### Template
