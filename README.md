@@ -126,11 +126,14 @@ Hypermedia controls defined in this document are standard building blocks which 
 ### Example
 As an example of building a media type out of JSON hypcos let's consider [HAL], which can be described as:
 
-> [HAL] is superset of `Link Object` + `Link Relation` + `Self Link` + `Links Hash` + `Links Array` + `Templated URI` (though it uses "_links" attribute name)
+> [HAL] is a superset of `Link Object` + `Link Relation` + `Self Link` + `Links Hash` + `Links Array` + `Templated URI`
+
+However [HAL] uses `"_links"` for the links hash name though the description is not strict. In [HAL] resources can also embed other resources in the `"_embedded"` hash. Resource embedding may become a separate JSON hypco in future. For now I consider it to be just `Self Link`+`Link Relation`+`Link Object`+`Links Hash` – whenever a hypco-aware client encounters an object with a self link object in a links hash, it should consider it to be an embedded resource of its own right.
 
 ## References
 1. [Hypertext Application Language][hal]
 2. [H Factor][hfactor]
+3. [URI Templates]
 3. [JSON Schema][schema]
 
 [hfactor]: http://amundsen.com/hypermedia/hfactor/
